@@ -1,0 +1,242 @@
+
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import HeroSection from '@/components/HeroSection';
+import PlantCard from '@/components/PlantCard';
+import MedicineCard from '@/components/MedicineCard';
+import Link from 'next/link';
+import { ArrowRight, Search, Leaf, FlaskConical, Sprout } from 'lucide-react';
+
+export default function Home() {
+  // Sample data for featured plants
+  const featuredPlants = [
+    {
+      name: "Lavender",
+      scientificName: "Lavandula",
+      description: "Lavender is a fragrant herb with purple flowers, known for its calming properties and pleasant aroma.",
+      benefits: [
+        "Promotes relaxation and reduces anxiety",
+        "Helps improve sleep quality",
+        "Has antiseptic and anti-inflammatory properties",
+        "Can help relieve headaches"
+      ],
+      imageUrl: "https://images.unsplash.com/photo-1594502184342-2349a8161e5a?q=80&w=1974"
+    },
+    {
+      name: "Chamomile",
+      scientificName: "Matricaria chamomilla",
+      description: "Chamomile is a daisy-like herb with white flowers, commonly used for its calming effects.",
+      benefits: [
+        "Helps reduce stress and anxiety",
+        "Promotes better sleep",
+        "Soothes digestive issues",
+        "Has anti-inflammatory properties"
+      ],
+      imageUrl: "https://images.unsplash.com/photo-1608638562455-0067e2a905f5?q=80&w=1932"
+    },
+    {
+      name: "Mint",
+      scientificName: "Mentha",
+      description: "Mint is a refreshing herb with bright green leaves, known for its digestive benefits and cooling sensation.",
+      benefits: [
+        "Helps with digestion",
+        "Relieves nausea and headaches",
+        "Freshens breath naturally",
+        "Can help with respiratory issues"
+      ],
+      imageUrl: "https://images.unsplash.com/photo-1628557044797-f21a177c37ec?q=80&w=1974"
+    }
+  ];
+
+  // Sample data for featured medicines
+  const featuredMedicines = [
+    {
+      name: "Echinacea Tincture",
+      plants: ["Echinacea", "Goldenseal"],
+      uses: [
+        "Boosts immune system",
+        "Helps fight colds and flu",
+        "Reduces inflammation",
+        "May shorten duration of illness"
+      ],
+      preparation: "Made by steeping fresh or dried echinacea flowers, leaves and roots in alcohol for several weeks.",
+      caution: "Not recommended for people with autoimmune disorders or allergies to plants in the daisy family.",
+      imageUrl: "https://images.unsplash.com/photo-1617206994903-78e6839f53be?q=80&w=1974"
+    },
+    {
+      name: "Lavender Sleep Sachet",
+      plants: ["Lavender", "Chamomile", "Hops"],
+      uses: [
+        "Promotes relaxation",
+        "Improves sleep quality",
+        "Reduces anxiety",
+        "Creates a calming atmosphere"
+      ],
+      preparation: "Dried herbs are combined and placed in a small cloth sachet, placed under the pillow or nearby when sleeping.",
+      imageUrl: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=1970"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen">
+      <Navbar />
+      
+      <HeroSection />
+      
+      {/* About Section */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
+            <h2 className="section-title mx-auto">About Our Virtual Garden</h2>
+            <p className="text-gray-300 mt-6">
+              Our virtual herbal garden is a digital sanctuary where traditional wisdom 
+              meets modern science. Explore healing plants, learn about their properties, 
+              and discover how they can enhance your wellbeing.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="glass-card p-6 transform hover:-translate-y-2 transition-all duration-300">
+              <div className="w-14 h-14 rounded-full bg-herb-700/50 flex items-center justify-center mb-4">
+                <Leaf size={24} className="text-herb-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Plant Database</h3>
+              <p className="text-gray-300 mb-4">
+                Access detailed information about hundreds of medicinal plants, including their uses, 
+                growing conditions, and healing properties.
+              </p>
+              <Link href="/garden" className="text-herb-400 hover:text-herb-300 flex items-center gap-1 text-sm font-medium">
+                Browse Plants <ArrowRight size={14} />
+              </Link>
+            </div>
+            
+            <div className="glass-card p-6 transform hover:-translate-y-2 transition-all duration-300">
+              <div className="w-14 h-14 rounded-full bg-herb-700/50 flex items-center justify-center mb-4">
+                <FlaskConical size={24} className="text-herb-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Herbal Remedies</h3>
+              <p className="text-gray-300 mb-4">
+                Discover traditional herbal remedies and preparations that have been used 
+                for centuries to address common health concerns.
+              </p>
+              <Link href="/medicines" className="text-herb-400 hover:text-herb-300 flex items-center gap-1 text-sm font-medium">
+                Explore Remedies <ArrowRight size={14} />
+              </Link>
+            </div>
+            
+            <div className="glass-card p-6 transform hover:-translate-y-2 transition-all duration-300">
+              <div className="w-14 h-14 rounded-full bg-herb-700/50 flex items-center justify-center mb-4">
+                <Search size={24} className="text-herb-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Plant Identification</h3>
+              <p className="text-gray-300 mb-4">
+                Use our advanced identification tools to identify unknown plants and detect 
+                potential plant diseases in your garden.
+              </p>
+              <Link href="/plant-identification" className="text-herb-400 hover:text-herb-300 flex items-center gap-1 text-sm font-medium">
+                Identify Plants <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Featured Plants Section */}
+      <section className="py-20 bg-dark-600/30">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+            <div>
+              <h2 className="section-title">Featured Plants</h2>
+              <p className="text-gray-300 max-w-2xl">
+                Discover some of nature's most powerful medicinal plants and their healing properties.
+              </p>
+            </div>
+            <Link href="/garden" className="glass-btn-outline mt-4 md:mt-0">
+              View All Plants
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredPlants.map((plant, index) => (
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${0.2 * index}s` }}>
+                <PlantCard {...plant} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Featured Medicines Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+            <div>
+              <h2 className="section-title">Herbal Medicines</h2>
+              <p className="text-gray-300 max-w-2xl">
+                Explore traditional remedies made from medicinal plants that promote wellness and healing.
+              </p>
+            </div>
+            <Link href="/medicines" className="glass-btn-outline mt-4 md:mt-0">
+              View All Remedies
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {featuredMedicines.map((medicine, index) => (
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${0.2 * index}s` }}>
+                <MedicineCard {...medicine} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-herb-gradient opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="glass-card p-8 md:p-12 max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Start Your Herbal Journey</h2>
+              <p className="text-gray-300 max-w-2xl mx-auto">
+                Whether you're a seasoned herbalist or just starting to explore the world of medicinal plants, 
+                our virtual herbal garden has something for everyone.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <Link href="/plant-identification" className="glass-card p-5 flex items-center gap-4 hover-scale">
+                <div className="w-12 h-12 rounded-full bg-herb-700/50 flex items-center justify-center flex-shrink-0">
+                  <Search size={20} className="text-herb-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-1">Identify Plants</h3>
+                  <p className="text-gray-400 text-sm">Discover unknown plants in your garden</p>
+                </div>
+              </Link>
+              
+              <Link href="/disease-identification" className="glass-card p-5 flex items-center gap-4 hover-scale">
+                <div className="w-12 h-12 rounded-full bg-herb-700/50 flex items-center justify-center flex-shrink-0">
+                  <Sprout size={20} className="text-herb-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-1">Diagnose Diseases</h3>
+                  <p className="text-gray-400 text-sm">Check plant health and identify issues</p>
+                </div>
+              </Link>
+            </div>
+            
+            <div className="text-center">
+              <Link href="/garden" className="glass-btn inline-flex items-center gap-2 group">
+                Explore the Garden
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <Footer />
+    </div>
+  );
+}
