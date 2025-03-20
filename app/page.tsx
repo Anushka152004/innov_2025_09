@@ -105,7 +105,7 @@ export default function Home() {
                 Access detailed information about hundreds of medicinal plants, including their uses, 
                 growing conditions, and healing properties.
               </p>
-              <Link href="/garden" className="text-herb-400 hover:text-herb-300 flex items-center gap-1 text-sm font-medium">
+              <Link href="/plants" className="text-herb-400 hover:text-herb-300 flex items-center gap-1 text-sm font-medium">
                 Browse Plants <ArrowRight size={14} />
               </Link>
             </div>
@@ -119,7 +119,7 @@ export default function Home() {
                 Discover traditional herbal remedies and preparations that have been used 
                 for centuries to address common health concerns.
               </p>
-              <Link href="/medicines" className="text-herb-400 hover:text-herb-300 flex items-center gap-1 text-sm font-medium">
+              <Link href="/plants?tab=medicines" className="text-herb-400 hover:text-herb-300 flex items-center gap-1 text-sm font-medium">
                 Explore Remedies <ArrowRight size={14} />
               </Link>
             </div>
@@ -151,7 +151,7 @@ export default function Home() {
                 Discover some of nature's most powerful medicinal plants and their healing properties.
               </p>
             </div>
-            <Link href="/garden" className="glass-btn-outline mt-4 md:mt-0">
+            <Link href="/plants" className="glass-btn-outline mt-4 md:mt-0">
               View All Plants
             </Link>
           </div>
@@ -176,14 +176,14 @@ export default function Home() {
                 Explore traditional remedies made from medicinal plants that promote wellness and healing.
               </p>
             </div>
-            <Link href="/medicines" className="glass-btn-outline mt-4 md:mt-0">
+            <Link href="/plants?tab=medicines" className="glass-btn-outline mt-4 md:mt-0">
               View All Remedies
             </Link>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuredMedicines.map((medicine, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${0.2 * index}s` }}>
+              <div key={index} className="animate-fade-in hover-scale" style={{ animationDelay: `${0.2 * index}s` }}>
                 <MedicineCard {...medicine} />
               </div>
             ))}
@@ -227,7 +227,7 @@ export default function Home() {
             </div>
             
             <div className="text-center">
-              <Link href="/garden" className="glass-btn inline-flex items-center gap-2 group">
+              <Link href="/plants" className="glass-btn inline-flex items-center gap-2 group">
                 Explore the Garden
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
