@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Leaf, Menu, X } from 'lucide-react';
+import { Leaf, Menu, X, MessageSquare, Globe, Flower, Search, AlertCircle } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,10 +30,26 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center space-x-8">
           <Link to="/" className="text-gray-200 hover:text-herb-400 transition-all duration-300">Home</Link>
-          <Link to="/garden" className="text-gray-200 hover:text-herb-400 transition-all duration-300">Garden</Link>
-          <Link to="/medicines" className="text-gray-200 hover:text-herb-400 transition-all duration-300">Medicines</Link>
-          <Link to="/plant-identification" className="text-gray-200 hover:text-herb-400 transition-all duration-300">Identify Plants</Link>
-          <Link to="/disease-identification" className="text-gray-200 hover:text-herb-400 transition-all duration-300">Identify Diseases</Link>
+          <Link to="/garden" className="text-gray-200 hover:text-herb-400 transition-all duration-300 flex items-center gap-1">
+            <Flower size={18} />
+            <span>Garden</span>
+          </Link>
+          <Link to="/plant-identification" className="text-gray-200 hover:text-herb-400 transition-all duration-300 flex items-center gap-1">
+            <Search size={18} />
+            <span>Identify Plants</span>
+          </Link>
+          <Link to="/disease-identification" className="text-gray-200 hover:text-herb-400 transition-all duration-300 flex items-center gap-1">
+            <AlertCircle size={18} />
+            <span>Identify Diseases</span>
+          </Link>
+          <Link to="/chatbot" className="text-gray-200 hover:text-herb-400 transition-all duration-300 flex items-center gap-1">
+            <MessageSquare size={18} />
+            <span>Chatbot</span>
+          </Link>
+          <Link to="/ecoiq" className="text-gray-200 hover:text-herb-400 transition-all duration-300 flex items-center gap-1">
+            <Globe size={18} />
+            <span>EcoIQ</span>
+          </Link>
         </div>
 
         <div className="md:hidden">
@@ -63,10 +79,26 @@ const Navbar = () => {
           </div>
           <div className="flex flex-col space-y-6 mt-12">
             <Link to="/" className="text-xl text-gray-200 hover:text-herb-400 transition-all duration-300" onClick={() => setIsOpen(false)}>Home</Link>
-            <Link to="/garden" className="text-xl text-gray-200 hover:text-herb-400 transition-all duration-300" onClick={() => setIsOpen(false)}>Garden</Link>
-            <Link to="/medicines" className="text-xl text-gray-200 hover:text-herb-400 transition-all duration-300" onClick={() => setIsOpen(false)}>Medicines</Link>
-            <Link to="/plant-identification" className="text-xl text-gray-200 hover:text-herb-400 transition-all duration-300" onClick={() => setIsOpen(false)}>Identify Plants</Link>
-            <Link to="/disease-identification" className="text-xl text-gray-200 hover:text-herb-400 transition-all duration-300" onClick={() => setIsOpen(false)}>Identify Diseases</Link>
+            <Link to="/garden" className="text-xl text-gray-200 hover:text-herb-400 transition-all duration-300 flex items-center gap-2" onClick={() => setIsOpen(false)}>
+              <Flower size={20} />
+              <span>Garden</span>
+            </Link>
+            <Link to="/plant-identification" className="text-xl text-gray-200 hover:text-herb-400 transition-all duration-300 flex items-center gap-2" onClick={() => setIsOpen(false)}>
+              <Search size={20} />
+              <span>Identify Plants</span>
+            </Link>
+            <Link to="/disease-identification" className="text-xl text-gray-200 hover:text-herb-400 transition-all duration-300 flex items-center gap-2" onClick={() => setIsOpen(false)}>
+              <AlertCircle size={20} />
+              <span>Identify Diseases</span>
+            </Link>
+            <Link to="/chatbot" className="text-xl text-gray-200 hover:text-herb-400 transition-all duration-300 flex items-center gap-2" onClick={() => setIsOpen(false)}>
+              <MessageSquare size={20} />
+              <span>Chatbot</span>
+            </Link>
+            <Link to="/ecoiq" className="text-xl text-gray-200 hover:text-herb-400 transition-all duration-300 flex items-center gap-2" onClick={() => setIsOpen(false)}>
+              <Globe size={20} />
+              <span>EcoIQ</span>
+            </Link>
           </div>
         </div>
       </div>

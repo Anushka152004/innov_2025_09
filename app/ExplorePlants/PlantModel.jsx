@@ -1,14 +1,12 @@
+
 import { useGLTF } from '@react-three/drei'
 
 export default function PlantModel({file}) {
-    
-//   const {scene} = useGLTF(async ()=>{
-//     const response = await fetch(url);
-//     const blob = await response.blob();
-//     return blob;
-//   });
-//   const {scene} = useGLTF("/public/PlantsModels/Aloevera.glb");
-  const {scene} = useGLTF(file[0]);
+  // Determine the file to use - if file is an array, use the first element
+  const modelFile = Array.isArray(file) ? file[0] : file;
+  
+  const {scene} = useGLTF(modelFile);
+  
   return (
     <primitive object={scene} />
   )
