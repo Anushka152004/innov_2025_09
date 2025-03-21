@@ -1,3 +1,4 @@
+
 import React from "react";
 import PlantVisuals from "./PlantVisuals";
 import PlantBasic from "./PlantBasic";
@@ -26,7 +27,13 @@ export default function PlantDetails() {
           soil={plantData.habitat_distribution.soil_requirements}
         />
         <section className="h-full sm:w-max w-full flex flex-col sm:gap-y-0 gap-y-5 justify-evenly">
-          <PlantBenefits ayushBenefits={plantData.medicinal_uses.applications_in_ayush} healthBenefits={plantData.phytochemistry.health_benefits} />
+          <PlantBenefits 
+            ayushBenefits={plantData.medicinal_uses.applications_in_ayush} 
+            healthBenefits={plantData.phytochemistry.health_benefits}
+            plantName={plantData.common_names[0]}
+            plantImages={(plantData.ai_images != undefined && plantData.org_images != undefined) ? 
+              [...plantData.ai_images, ...plantData.org_images] : undefined}
+          />
           <AudioDetails description={plantData.simplified_description} />
           <PlantVisuals
             images={(plantData.ai_images != undefined && plantData.org_images != undefined) ? [...plantData.ai_images, ...plantData.org_images] : undefined}
