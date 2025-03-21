@@ -1,8 +1,8 @@
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import PlantCard from '@/components/PlantCard';
-import MedicineCard from '@/components/MedicineCard';
 import Link from 'next/link';
 import { ArrowRight, Search, Leaf, FlaskConical, Sprout } from 'lucide-react';
 
@@ -44,35 +44,6 @@ export default function Home() {
         "Can help with respiratory issues"
       ],
       imageUrl: "/lovable-uploads/5119cb40-375c-449c-ac6c-31db80dc8974.png"
-    }
-  ];
-
-  // Sample data for featured medicines
-  const featuredMedicines = [
-    {
-      name: "Echinacea Tincture",
-      plants: ["Echinacea", "Goldenseal"],
-      uses: [
-        "Boosts immune system",
-        "Helps fight colds and flu",
-        "Reduces inflammation",
-        "May shorten duration of illness"
-      ],
-      preparation: "Made by steeping fresh or dried echinacea flowers, leaves and roots in alcohol for several weeks.",
-      caution: "Not recommended for people with autoimmune disorders or allergies to plants in the daisy family.",
-      imageUrl: "https://images.unsplash.com/photo-1617206994903-78e6839f53be?q=80&w=1974"
-    },
-    {
-      name: "Lavender Sleep Sachet",
-      plants: ["Lavender", "Chamomile", "Hops"],
-      uses: [
-        "Promotes relaxation",
-        "Improves sleep quality",
-        "Reduces anxiety",
-        "Creates a calming atmosphere"
-      ],
-      preparation: "Dried herbs are combined and placed in a small cloth sachet, placed under the pillow or nearby when sleeping.",
-      imageUrl: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=1970"
     }
   ];
 
@@ -159,31 +130,6 @@ export default function Home() {
             {featuredPlants.map((plant, index) => (
               <div key={index} className="animate-fade-in" style={{ animationDelay: `${0.2 * index}s` }}>
                 <PlantCard {...plant} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Featured Medicines Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
-            <div>
-              <h2 className="section-title">Herbal Medicines</h2>
-              <p className="text-gray-300 max-w-2xl">
-                Explore traditional remedies made from medicinal plants that promote wellness and healing.
-              </p>
-            </div>
-            <Link href="/plants?tab=medicines" className="glass-btn-outline mt-4 md:mt-0">
-              View All Remedies
-            </Link>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featuredMedicines.map((medicine, index) => (
-              <div key={index} className="animate-fade-in hover-scale" style={{ animationDelay: `${0.2 * index}s` }}>
-                <MedicineCard {...medicine} />
               </div>
             ))}
           </div>

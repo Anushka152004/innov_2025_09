@@ -90,11 +90,18 @@ const PlantCard: React.FC<PlantCardProps> = ({
         {/* Back of card */}
         <div className="absolute inset-0 backface-hidden rotate-y-180">
           <div className="glass-card h-full p-6 flex flex-col">
+            <div className="w-full mb-4 rounded-lg overflow-hidden">
+              <img 
+                src={getImage()}
+                alt={name}
+                className="w-full h-32 object-cover"
+              />
+            </div>
             <h3 className="text-xl font-semibold text-white mb-2 flex items-center gap-2">
               <Leaf size={18} className="text-herb-400" />
               Benefits of {name}
             </h3>
-            <div className="mt-2 flex-grow">
+            <div className="mt-2 flex-grow overflow-auto">
               <ul className="space-y-2">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-2">
