@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -19,7 +18,7 @@ export default function Plants() {
   const [medicineSearchTerm, setMedicineSearchTerm] = useState('');
   const [selectedMedicineCategory, setSelectedMedicineCategory] = useState('all');
   
-  // Sample plant data
+  // Sample plant data with updated images
   const plants = [
     {
       name: "Lavender",
@@ -32,7 +31,7 @@ export default function Plants() {
         "Has antiseptic and anti-inflammatory properties",
         "Can help relieve headaches"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1594502184342-2349a8161e5a?q=80&w=1974"
+      imageUrl: "/lovable-uploads/5f67ebea-cabc-4fe7-988f-ec7914819ff9.png"
     },
     {
       name: "Chamomile",
@@ -45,7 +44,7 @@ export default function Plants() {
         "Soothes digestive issues",
         "Has anti-inflammatory properties"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1608638562455-0067e2a905f5?q=80&w=1932"
+      imageUrl: "/lovable-uploads/27c167a9-578f-4726-b219-1ec014cddd94.png"
     },
     {
       name: "Mint",
@@ -58,7 +57,7 @@ export default function Plants() {
         "Freshens breath naturally",
         "Can help with respiratory issues"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1628557044797-f21a177c37ec?q=80&w=1974"
+      imageUrl: "/lovable-uploads/5119cb40-375c-449c-ac6c-31db80dc8974.png"
     },
     {
       name: "Echinacea",
@@ -71,7 +70,7 @@ export default function Plants() {
         "Reduces inflammation",
         "May shorten illness duration"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1558443336-dfc9b8e649c2?q=80&w=1970"
+      imageUrl: "/lovable-uploads/b945cb21-a5e2-4e7c-b50e-c08a2fce801d.png"
     },
     {
       name: "Ginger",
@@ -84,7 +83,7 @@ export default function Plants() {
         "Aids digestion",
         "Helps fight colds and flu"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=1970"
+      imageUrl: "/lovable-uploads/a773733e-cb94-43b0-877c-7e3d59ab5295.png"
     },
     {
       name: "Aloe Vera",
@@ -97,7 +96,7 @@ export default function Plants() {
         "Has antibacterial properties",
         "Can help with digestive issues"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1596046060655-be505f8cae90?q=80&w=1974"
+      imageUrl: "/lovable-uploads/b5a6293e-eb25-48e9-9539-6684d2a3cf97.png"
     },
     {
       name: "Turmeric",
@@ -110,7 +109,7 @@ export default function Plants() {
         "May help prevent chronic diseases",
         "Improves brain function"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1563245160-7ff90295366b?q=80&w=1974"
+      imageUrl: "/lovable-uploads/c0e5c05d-90c5-477e-b918-903e3d804ed1.png"
     },
     {
       name: "St. John's Wort",
@@ -123,7 +122,7 @@ export default function Plants() {
         "Has anti-inflammatory properties",
         "May help with menopausal symptoms"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1466245521925-a20d016fe149?q=80&w=1974"
+      imageUrl: "/lovable-uploads/d92fcd2d-cea0-489a-989d-6d086d0ec8d3.png"
     },
     {
       name: "Valerian",
@@ -136,7 +135,7 @@ export default function Plants() {
         "May help with stress",
         "Can ease menstrual cramps"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1502818364365-08cda033fee1?q=80&w=1974"
+      imageUrl: "/lovable-uploads/57c9bed3-4730-4e13-96bc-112878249d57.png"
     }
   ];
 

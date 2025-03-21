@@ -1,4 +1,3 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
@@ -8,7 +7,7 @@ import Link from 'next/link';
 import { ArrowRight, Search, Leaf, FlaskConical, Sprout } from 'lucide-react';
 
 export default function Home() {
-  // Sample data for featured plants
+  // Sample data for featured plants with updated images
   const featuredPlants = [
     {
       name: "Lavender",
@@ -20,7 +19,7 @@ export default function Home() {
         "Has antiseptic and anti-inflammatory properties",
         "Can help relieve headaches"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1594502184342-2349a8161e5a?q=80&w=1974"
+      imageUrl: "/lovable-uploads/5f67ebea-cabc-4fe7-988f-ec7914819ff9.png"
     },
     {
       name: "Chamomile",
@@ -32,7 +31,7 @@ export default function Home() {
         "Soothes digestive issues",
         "Has anti-inflammatory properties"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1608638562455-0067e2a905f5?q=80&w=1932"
+      imageUrl: "/lovable-uploads/27c167a9-578f-4726-b219-1ec014cddd94.png"
     },
     {
       name: "Mint",
@@ -44,7 +43,7 @@ export default function Home() {
         "Freshens breath naturally",
         "Can help with respiratory issues"
       ],
-      imageUrl: "https://images.unsplash.com/photo-1628557044797-f21a177c37ec?q=80&w=1974"
+      imageUrl: "/lovable-uploads/5119cb40-375c-449c-ac6c-31db80dc8974.png"
     }
   ];
 

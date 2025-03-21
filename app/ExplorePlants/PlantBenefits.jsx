@@ -35,10 +35,38 @@ import {
 export default function PlantBenefits({ ayushBenefits, healthBenefits, plantName, plantImages }) {
   const [isDetailDialogOpen, setIsDetailDialogOpen] = useState(false);
   
-  // Get the first image from the array if it exists
-  const displayImage = Array.isArray(plantImages) && plantImages.length > 0 
-    ? plantImages[0] 
-    : "https://images.unsplash.com/photo-1603356051383-9686a21a4f2d?q=80&w=2070";
+  // Get a default image if plantImages is empty or undefined
+  const getDisplayImage = () => {
+    if (Array.isArray(plantImages) && plantImages.length > 0) {
+      return plantImages[0];
+    }
+    
+    // Return appropriate image based on plantName
+    switch(plantName?.toLowerCase()) {
+      case "lavender":
+        return "/lovable-uploads/5f67ebea-cabc-4fe7-988f-ec7914819ff9.png";
+      case "chamomile":
+        return "/lovable-uploads/27c167a9-578f-4726-b219-1ec014cddd94.png";
+      case "mint":
+        return "/lovable-uploads/5119cb40-375c-449c-ac6c-31db80dc8974.png";
+      case "echinacea":
+        return "/lovable-uploads/b945cb21-a5e2-4e7c-b50e-c08a2fce801d.png";
+      case "ginger":
+        return "/lovable-uploads/a773733e-cb94-43b0-877c-7e3d59ab5295.png";
+      case "aloe vera":
+        return "/lovable-uploads/b5a6293e-eb25-48e9-9539-6684d2a3cf97.png";
+      case "turmeric":
+        return "/lovable-uploads/c0e5c05d-90c5-477e-b918-903e3d804ed1.png";
+      case "st. john's wort":
+        return "/lovable-uploads/d92fcd2d-cea0-489a-989d-6d086d0ec8d3.png";
+      case "valerian":
+        return "/lovable-uploads/57c9bed3-4730-4e13-96bc-112878249d57.png";
+      default:
+        return "https://images.unsplash.com/photo-1603356051383-9686a21a4f2d?q=80&w=2070";
+    }
+  };
+
+  const displayImage = getDisplayImage();
 
   return (
     <div className="w-full sm:w-[400px] h-max flex sm:gap-x-0 gap-x-2 justify-between items-center">

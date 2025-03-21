@@ -23,6 +23,35 @@ const PlantCard: React.FC<PlantCardProps> = ({
     setIsFlipped(!isFlipped);
   };
 
+  // Helper function to get fallback image if needed
+  const getImage = () => {
+    if (imageUrl) return imageUrl;
+    
+    // Fallback based on plant name
+    switch(name.toLowerCase()) {
+      case "lavender":
+        return "/lovable-uploads/5f67ebea-cabc-4fe7-988f-ec7914819ff9.png";
+      case "chamomile":
+        return "/lovable-uploads/27c167a9-578f-4726-b219-1ec014cddd94.png";
+      case "mint":
+        return "/lovable-uploads/5119cb40-375c-449c-ac6c-31db80dc8974.png";
+      case "echinacea":
+        return "/lovable-uploads/b945cb21-a5e2-4e7c-b50e-c08a2fce801d.png";
+      case "ginger":
+        return "/lovable-uploads/a773733e-cb94-43b0-877c-7e3d59ab5295.png";
+      case "aloe vera":
+        return "/lovable-uploads/b5a6293e-eb25-48e9-9539-6684d2a3cf97.png";
+      case "turmeric":
+        return "/lovable-uploads/c0e5c05d-90c5-477e-b918-903e3d804ed1.png";
+      case "st. john's wort":
+        return "/lovable-uploads/d92fcd2d-cea0-489a-989d-6d086d0ec8d3.png";
+      case "valerian":
+        return "/lovable-uploads/57c9bed3-4730-4e13-96bc-112878249d57.png";
+      default:
+        return "https://images.unsplash.com/photo-1603356051383-9686a21a4f2d?q=80&w=2070";
+    }
+  };
+
   return (
     <div 
       className="relative h-96 perspective-1000 group"
@@ -38,7 +67,7 @@ const PlantCard: React.FC<PlantCardProps> = ({
           <div className="glass-card h-full overflow-hidden group">
             <div className="relative h-3/5 overflow-hidden">
               <img 
-                src={imageUrl || "https://images.unsplash.com/photo-1603356051383-9686a21a4f2d?q=80&w=2070"} 
+                src={getImage()}
                 alt={name}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
