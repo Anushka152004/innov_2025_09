@@ -1,0 +1,134 @@
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-green: #00FF99;
+  --emerald: #1DB954;
+  --deep-black: #121212;
+  --accent-black: #1A1A1A;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+}
+
+@keyframes floatingLeaves {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg) scale(1.05);
+  }
+}
+
+@keyframes dewDrop {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 153, 0.4);
+  }
+}
+
+@keyframes vineGrow {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.premium-glass {
+  background: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 255, 153, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.neon-border {
+  position: relative;
+  border: 1px solid rgba(0, 255, 153, 0.2);
+}
+
+.neon-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, var(--neon-green), var(--emerald));
+  opacity: 0.2;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.dew-drop {
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 255, 153, 0.4);
+  border-radius: 50%;
+  animation: dewDrop 3s infinite;
+}
+
+.vine-divider {
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--neon-green), transparent);
+  transform-origin: top;
+  animation: vineGrow 1.5s ease-out forwards;
+}
+
+.botanical-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 153, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(29, 185, 84, 0.03) 0%, transparent 50%),
+    linear-gradient(45deg, rgba(0, 255, 153, 0.01) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(29, 185, 84, 0.01) 25%, transparent 25%);
+  background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+}
+
+.glow-hover {
+  transition: all 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
+  transform: translateY(-2px);
+}
+
+.score-meter {
+  height: 8px;
+  background: linear-gradient(to right, var(--neon-green), var(--emerald));
+  border-radius: 4px;
+  transition: width 1s ease-out;
+}
+
+body {
+  background-color: var(--deep-black);
+  @apply botanical-pattern min-h-screen text-white overflow-x-hidden;
+}
